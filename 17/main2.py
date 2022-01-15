@@ -24,43 +24,21 @@ while cur_x <= x_max:
     cur_x = k*(k+1)//2
 print('minimum, maximum K:', (k_min, k_max), list(map(lambda k: k*(k+1)//2, (k_min, k_max))))
 
-valid_counter = 0
-"""
-max_h = 0
-for k in range(k_min, k_max+1):
-    # l <= k case
-    for l in range(1000,-100,-1):
-        #print(f'polling for (k={k}, l={l})', flush=True)
-        dh_max = l*(l+1)//2
-        t = k-l
-        cur_x = k*(k+1)//2
-        cur_y = dh_max - (t*(t+1)//2)
-        while cur_y >= y_min:
-            #print(f'  x={cur_x}, y={cur_y}')
-            if cur_y <= y_max:
-                max_h = max(max_h, dh_max)
-                valid_counter += 1
-            t += 1
-            cur_y = dh_max - (t*(t+1)//2)
-print(max_h)
-print(valid_counter)
-"""
-
-# Simulate direct trajectories
+# Simulate all angles
+dh_max = 0
 valid_trajectories = set()
-for k_d in range(x_max):
-    for l_d in range(10000,y_min-1,-1):
-        cur_x, cur_y = 0, 0
-        dx, dy = k_d, l_d
-        t = 0
+for x in range(k_min, x_max+1):
+    for y in range(-y_min, y_min-2, -1):
+        cur_x, cur_y = 0,0
+        dx, dy = x, y
         while cur_x <= x_max and cur_y >= y_min:
-            t += 1
             cur_x += dx
             cur_y += dy
-            if cur_x >= x_min and cur_y <= y_max:
-                valid_trajectories.add((t, k_d, l_d))
-                valid_counter += 1
-                break
             dx = max(0, dx-1)
             dy -= 1
+            if cur_x >= x_min and cur_x <= x_max and cur_y >= y_min and cur_y <= y_max:
+                dh_max = max(dh_max,y*(y+1)//2)
+                valid_trajectories.add((x,y))
+                break
 print(len(valid_trajectories))
+print(dh_max)
