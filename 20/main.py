@@ -57,6 +57,8 @@ class Picture(object):
                 if cur_cell:
                     new_max_pt = (max(new_max_pt[0], x), max(new_max_pt[1], y))
                     new_min_pt = (min(new_min_pt[0], x), min(new_min_pt[1], y))
+        # NOTE: this is particular to my input, in particular, we observe that the
+        #       encoding at [0] and [255] makes this flip between on/off each cycle.
         self.inf_cell_state = not self.inf_cell_state
         self.cells = new_cells
         self.max_pt = new_max_pt
