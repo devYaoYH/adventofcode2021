@@ -1,0 +1,24 @@
+inp w
+mul x 0		// clear x
+add x z 	// copy z into x
+mod x 26	// modulo z by 26 (max value 25)
+div z 1		// no effect
+add x 14	// add 14 to z
+dmp
+eql x w		// does input == 14+z%26?
+eql x 0		// is previous cond false?
+pnt x
+mul y 0		// clear y
+add y 25	// set y = 25
+mul y x		// x = {0,1}, so set y to 0 if `eql x w`
+add y 1		// increment y
+mul z y		// either retain z or multiply z by y
+dmp
+mul y 0		// clear y
+add y w		// copy w (input) into y
+add y 16	// w+16
+dmp
+mul y x		// x = {0,1}, so set y to 0 if `eql x w`
+add z y		// accumulate into z if not `eql x w` value: w+16+z (prev z)
+pnt z
+END
