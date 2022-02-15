@@ -109,12 +109,22 @@ class DebugOutputStream(object):
     def dump(self):
         print(list(map(str, self.output)))
 
+# Full program instructions (for verification)
+"""
 prog = []
 with open('input', 'r') as fin:
     for line in fin:
         if line.strip() == "END":
             break
         prog.append(line.strip())
+"""
+
+# Reads (potentially) sub program from stdin
+prog = []
+for line in sys.stdin:
+    if line.strip() == "END":
+        break
+    prog.append(line.strip())
 
 oracle = ALU(DebugInputStream(), DebugOutputStream())
 #oracle.load_instructions(['pnt -3', 'inp w', 'inp z', 'add w z', 'pnt w', 'mul w -1', 'div w 2', 'pnt w', 'pnt z', 'add w 100', 'mod w 2', 'eql w 0', 'pnt w'])
