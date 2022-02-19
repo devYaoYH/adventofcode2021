@@ -29,10 +29,10 @@ Advent Of Code solutions. https://adventofcode.com/2021
 - [![#F28705](https://via.placeholder.com/15/F28705/000000?text=+) [18]](https://adventofcode.com/2021/day/18): Practice implementing binary tree with some traversals, part 2 required some modifications to not mutate nodes in-place.
 - [![#F28705](https://via.placeholder.com/15/F28705/000000?text=+) [19]](https://adventofcode.com/2021/day/19): Bruteforce but tricky due to the amount of cases to consider. Helpful to imagine the 24 possible orientations with a Rubik's Cube and rotate coordinates with some matrix algebra.
 - [![#488C03](https://via.placeholder.com/15/488C03/000000?text=+) [20]](https://adventofcode.com/2021/day/20): Need to take note of edge cases (idx 0 & 255) and impact of each enhancement pass on 'infinite' cells.
-- [![#F28705](https://via.placeholder.com/15/F28705/000000?text=+) [21]](https://adventofcode.com/2021/day/21): Recursion problem with a dash of math, compress tree depth first with some combinatorics ([really short solution](/21/main2.py)).
-- [![#A62F03](https://via.placeholder.com/15/A62F03/000000?text=+) [22]](https://adventofcode.com/2021/day/22): Interesting geometry qns, some initial math needed for insight, thereafter bruteforce possible ([notes](/22)).
+- [![#F28705](https://via.placeholder.com/15/F28705/000000?text=+) [21]](https://adventofcode.com/2021/day/21): Recursion problem with a dash of math, compress tree depth first with some combinatorics ([really short solution](/src/21/main2.py)).
+- [![#A62F03](https://via.placeholder.com/15/A62F03/000000?text=+) [22]](https://adventofcode.com/2021/day/22): Interesting geometry qns, some initial math needed for insight, thereafter bruteforce possible ([notes](/src/22)).
 - [![#F28705](https://via.placeholder.com/15/F28705/000000?text=+) [23]](https://adventofcode.com/2021/day/23): Graph problem (shortest path), much of the search space is filtered out by the rules of amphipod etiquette.
-- [![#A62F03](https://via.placeholder.com/15/A62F03/000000?text=+) [24]](https://adventofcode.com/2021/day/24): 9^14 brute-force impossible, need to reverse-engineer the 'binary' and do some backtracking ([notes](/24)).
+- [![#A62F03](https://via.placeholder.com/15/A62F03/000000?text=+) [24]](https://adventofcode.com/2021/day/24): 9^14 brute-force impossible, need to reverse-engineer the 'binary' and do some backtracking ([notes](/src/24)).
 - [![#595843](https://via.placeholder.com/15/595843/000000?text=+) [25]](https://adventofcode.com/2021/day/25): Merry Christmas!
 
 ## Some thoughts
