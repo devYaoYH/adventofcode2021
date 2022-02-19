@@ -90,16 +90,17 @@ def findValid(depth, possible_z, current_num):
         if possible_z == 0:
             return current_num
         else:
-            return -1
-    next_z = defaultdict(int)
+            return None
+    next_z = defaultdict(lambda: 11)
     for p_z, p_w in invSeq[depth](possible_z):
-        next_z[p_z] = max(p_w, next_z[p_z])
+        next_z[p_z] = min(p_w, next_z[p_z])
     # print(f"[{possible_z}]", next_z.items())
     results = list(map(lambda tup: findValid(depth-1, tup[0], tup[1]*(10**(13-depth)) + current_num), next_z.items()))
+    results = [r for r in results if r is not None]
     # print(depth, results)
     if len(results) == 0:
-        return -1
+        return None
     else:
-        return max(results)
+        return min(results)
 
 print(findValid(13, 0, 0))
